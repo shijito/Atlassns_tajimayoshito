@@ -27,7 +27,7 @@ class UsersController extends Controller
     public function profileupdate(Request $request){
         $user = Auth::user();
         $image = $request->file('iconimage')->store('public/images');
-        $user->updata([
+        $user->update([
         'username' => $request->input('username'),
         'mail' => $request->input('mail'),
         'password' => $request->input('newpassword'),
