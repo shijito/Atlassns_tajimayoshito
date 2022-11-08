@@ -11,8 +11,9 @@ header{
 /*↓アコーディオンメニュー　開いた状態の矢印描画まで*/
 /*アコーディオン全体*/
 .menu {
-    width: 100%;
+    width: 20%;
     padding: 10px 10px 20px;
+
   }
 .menu input {
     display: none; /*チェックボックスを隠す*/

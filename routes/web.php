@@ -44,7 +44,7 @@ Route::post('/update','PostsController@update');
 //プロフィール
 Route::get('/profile','UsersController@profile');
 //プロフィールupdate
-Route::get('/profile','UsersController@profileupdate');
+Route::post('/profile','UsersController@profileupdate')->name('profileupdate');
 
 //検索
 //一覧表示

@@ -2,9 +2,9 @@
 
 @section('content')
 
-<form action="/profile" method="post" enctype="multipart/form-data">
+<form action="/profile" method="post" enctype="multipart/form-data"><!--enctype=”multipart/form-data”は画像を送信する際のおまじない-->
   @csrf
-  <d1 class="UserProfile">    
+  <dl class="UserProfile">    
       <!--username-->
       <dt>user name</dt>
       <dd><input type="text" name="username" value="{{$user->username}}"></dd><!--Usercontroller　profileでuser情報を取得してその中からusernameのみを取得。userテーブルの中のカラム情報を取り出している-->
@@ -22,10 +22,9 @@
       <dd><input type="text" name="bio" value="{{$user->bio}}"></dd><!--Usercontroller　profileでuser情報を取得してその中からbioのみを取得-->
       <!--image-->
       <dt>icon image</dt>
-      <dd><input type="file" name="iconimage"></dd><!--enctype=”multipart/form-data”は画像を送信する際のおまじない-->
-      <!--更新ボタン-->
-  </d1>
-  <button type="submit" name="profileupdate">更新</button>
+      <dd><input type="file" name="iconimage"></dd> 
+  </dl>
+  <input type="submit" name="profileupdate">更新</button><!--更新ボタン-->
 </form>
 
 
