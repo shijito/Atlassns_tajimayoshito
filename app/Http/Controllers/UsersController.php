@@ -27,10 +27,10 @@ class UsersController extends Controller
     public function profileupdate(Request $request){
         
         $user = Auth::id();
-        
+
         $image = $request->file('iconimage')->store('public/images');
         
-        User::where('id', $user)->update([
+        User::where('id', $user)->update([      //idとログインユーザーのidが一致するもの
         'username' => $request->input('username'),
         'mail' => $request->input('mail'),
         'password' => bcrypt($request->input('newpassword')),
