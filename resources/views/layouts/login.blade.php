@@ -25,7 +25,7 @@
         <h1><a href="/top"><img src="images/atlas.png"></a></h1>
             <div id="">
                 <div id="">
-                    <p>{{ Auth::user()->username }}さん<img src="images/arrow.png"></p>
+                    <p>{{ Auth::user()->username }}さん<img src="{{asset('storage/images/' . Auth::user()->images )}}" /></p>
                 <div>
                 <div class="menu">
                     <input type="checkbox" id="menu_bar01"/>
@@ -44,16 +44,15 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>〇〇さんの</p>
+                <p>{{ Auth::user()->username }}さんの</p>
                 <div>
-                <p>フォロー数</p>
-                <p>〇〇名</p>
+                    <p>フォロー数</p>
+                    <p>〇〇名</p>
                 </div>
                 <p class="btn"><a href="/followList">フォローリスト</a></p>
                 <div>
-                <p>フォロワ
-                    ー数</p>
-                <p>〇〇名</p>
+                    <p>フォロワー数</p>
+                    <p>〇〇名</p>
                 </div>
                 <p class="btn"><a href="/followerList">フォロワーリスト</a></p>
             </div>

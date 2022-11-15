@@ -42,6 +42,12 @@ class UsersController extends Controller
 
     }
 
+    public function iconimage(Request $request){
+        $user = Auth::user();
+
+        return view('login.blade', $user);
+    }
+
     //検索を一覧表示
     public function search(){
 

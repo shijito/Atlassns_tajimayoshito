@@ -8,9 +8,9 @@ class Post extends Model
 {
     //
 
-    public function follow()
+    public function User()
     { 
-        return $this->belongsTo('App\Follow');
+        return $this->belongsTo('App\User');
     }
 
 }
