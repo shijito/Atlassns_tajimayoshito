@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Follow extends Model
 {
     //
-    public function posts()
+    public function post()
     {
         return $this->hasMany('App\Post');
     }

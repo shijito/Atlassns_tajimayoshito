@@ -59,7 +59,6 @@ Route::post('/usersearch/{id}/unfollow', 'UsersController@unfollow')->name('unfo
 
 //フォロー
 Route::get('/followList','FollowsController@followList');
-Route::get('/followList','FollowsController@followpostlist');
 
 //フォロワー
 Route::get('/followerList','FollowsController@followerList');

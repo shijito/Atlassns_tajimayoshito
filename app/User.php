@@ -64,7 +64,7 @@ class User extends Authenticatable
         return (boolean) $this->followUsers()->where('following_id', $user_id)->exists();
     }
 
-  
+   
 
 }   
 

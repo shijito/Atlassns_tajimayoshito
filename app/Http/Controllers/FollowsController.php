@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use Illuminate\support\Facades\Auth;
 
-use app\User;                //User.phpを適用させる
-use app\Follow;              //Follow.phpを適用させる
-use app\Post;
+use App\User;                //User.phpを適用させる
+use App\Follow;              //Follow.phpを適用させる
+use App\Post;
 
 class FollowsController extends Controller
 {
@@ -24,18 +24,13 @@ class FollowsController extends Controller
 
         $user = Auth::user(); //ログインユーザーを取得
         $follow_user = $user -> follows() ->get(); //User.phpのfollowsを引っ張ってきている
-        
-        return view('follows.followList' , ['follow_user'=>$follow_user]);
-    }
-
-    public function followpostlist(){
-
-        $followpost = Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('followed_id'))->latest()->get();
+        $followpost = Post::query()->whereIn('user_id', $user->follows()->pluck('followed_id'))->latest()->get();
         
         return view('follows.followList')->with([
-            'followpost' => $followpost,
+            'follow_user'=>$follow_user,'followpost' => $followpost,
             ]);
     }
+    
 
 
 

@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 use Illuminate\support\Facades\Auth;
 
-use app\User;                //User.phpを適用させる
-use app\Follow;              //Follow.phpを適用させる
+use App\User;                //User.phpを適用させる
+use App\Follow;              //Follow.phpを適用させる
 
 class UsersController extends Controller
 {
@@ -42,11 +42,6 @@ class UsersController extends Controller
 
     }
 
-    public function iconimage(Request $request){
-        $user = Auth::user();
-
-        return view('login.blade', $user);
-    }
 
     //検索を一覧表示
     public function search(){
