@@ -23,11 +23,12 @@ class FollowsController extends Controller
     public function followList(){
 
         $user = Auth::user(); //ログインユーザーを取得
-        $follow_user = $user -> follows() ->get(); //User.phpのfollowsを引っ張ってきている
-        $followpost = Post::query()->whereIn('user_id', $user->follows()->pluck('followed_id'))->latest()->get();
-        
+        $follow_user = $user -> follows() ->get(); //User.phpのfollowsを引っ張ってきている。ログインユーザーとfollowsテーブルをつなげて、フォローの情報を取得する。
+        $followpost = Post::with('user')->whereIn('user_id', Auth::user()->follows()->pluck('followed_id'))->latest()->get();
+        //↑postwith(user)がpostとuserテーブルをつなげる。postsテーブルのuser_idとログインユーザーのfollowsテーブルのfollowed_idの一致するものを取得する。
+
         return view('follows.followList')->with([
-            'follow_user'=>$follow_user,'followpost' => $followpost,
+            'follow_user'=>$follow_user,'followpost' => $followpost
             ]);
     }
     
@@ -39,7 +40,11 @@ class FollowsController extends Controller
     public function followerList(){
 
         $user = Auth::user(); //ログインユーザーを取得
-        $follow_user = $user -> followUsers() ->get();
-        return view('follows.followerList' , ['follow_user'=>$follow_user]);
+        $follower_user = $user -> followUsers() ->get();
+        $followerpost = Post::with('user')->whereIn('user_id', Auth::user()->followUsers()->pluck('following_id'))->latest()->get();
+        
+        return view('follows.followerList')->with([
+            'follower_user'=>$follower_user , 'followerpost' => $followerpost 
+            ]);
     }
 }

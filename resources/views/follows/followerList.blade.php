@@ -3,13 +3,22 @@
 @section('content')
 
 <div class="allfollowList">
-    @foreach ($follow_user as $follow_user)
+    @foreach ($follower_user as $follower_user)
         <tr>
-              <!--ログインユーザーがフォローした人の一覧を表示する-->
-            <td>{{ $follow_user->username }}</td>
+            <!--ログインユーザーのフォロワーの一覧を表示する-->
+            <td><img src="{{asset('storage/images/' . $follower_user->images )}}" /><td>
         </tr>
     @endforeach
 </div>
 
+<div class="followerList_timeline">
+    @foreach ($followerpost as $followerpost)
+    <tr>
+        <td><img src="{{asset('storage/images/' . $followerpost->user->images )}}" /></td>
+        <td>{{ $followerpost->post }}</td>
+        <td>{{ $followerpost->created_at }}</td>
+    </tr>
+    @endforeach
+</div>
 
 @endsection

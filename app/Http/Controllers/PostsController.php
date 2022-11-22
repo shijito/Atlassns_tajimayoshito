@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use Illuminate\support\Facades\Auth;
 
+use App\User;
+use App\Post;
+
 class PostsController extends Controller
 {
     //auth認証
@@ -16,7 +19,8 @@ class PostsController extends Controller
     
     //ツイートを表示
     public function index(){
-        $timeline = \DB::table('posts')->get(); //データベースのtweets表示をタイムラインと設定
+        //$timeline = \DB::table('posts')->get(); //データベースのtweets表示をタイムラインと設定
+        $timeline = Post::with('user')->get();
         return view('posts.index' , ['timeline'=>$timeline]); //return viewは、return view('ファイル');
     }
 

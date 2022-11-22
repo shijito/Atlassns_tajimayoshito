@@ -64,7 +64,10 @@ class User extends Authenticatable
         return (boolean) $this->followUsers()->where('following_id', $user_id)->exists();
     }
 
-   
+    public function posts()
+    { 
+        return $this->hasMany('App\Post');
+    }
 
 }   
 

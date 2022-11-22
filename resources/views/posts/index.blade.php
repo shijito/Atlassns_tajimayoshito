@@ -18,6 +18,8 @@
 <div class="showtimeline">
   @foreach ($timeline as $timeline)  
     <tr>
+      <td><img src="{{asset('storage/images/' . $timeline->user->images )}}" /></td>
+      <td>{{ $timeline->user->username }}<td><!--ユーザー名を表示させる必要がある-->
       <td>{{ $timeline->post }}</td>  
       <td>{{ $timeline->created_at }}</td>
     </tr>
