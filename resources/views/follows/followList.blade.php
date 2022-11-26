@@ -6,7 +6,7 @@
     @foreach ($follow_user as $follow_user)
     <tr>
         <!--ログインユーザーがフォローした人の一覧を表示する-->
-        <td><img src="{{asset('storage/images/' . $follow_user->images )}}" /><td>
+        <td><a href="/followList/{{ $follow_user->id }}"><img src="{{asset('storage/images/' . $follow_user->images )}}" /></a><td>
     <tr>
     @endforeach
 </div>

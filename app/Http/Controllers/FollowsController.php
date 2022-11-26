@@ -31,6 +31,7 @@ class FollowsController extends Controller
             'follow_user'=>$follow_user,'followpost' => $followpost
             ]);
     }
+
     
 
 
