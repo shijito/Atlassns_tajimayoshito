@@ -32,8 +32,11 @@ class FollowsController extends Controller
             ]);
     }
 
-    
 
+    public function followprofile(){
+
+        return view('follows.followprofile');
+    }
 
 
     //フォロワー系
@@ -48,4 +51,11 @@ class FollowsController extends Controller
             'follower_user'=>$follower_user , 'followerpost' => $followerpost 
             ]);
     }
+
+    public function followerprofile(){
+
+        return view('follows.followerprofile');
+    }
+
+
 }
