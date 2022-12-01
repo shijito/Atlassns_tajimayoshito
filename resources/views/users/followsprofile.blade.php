@@ -15,6 +15,7 @@
 <!--取得したidの人の画像とつぶやき-->
     @foreach ($otherposts as $otherposts)
         <tr>
+            <td><img src="{{asset('storage/images/' . $otherposts->user->images )}}" /></td>
             <td>{{ $otherposts -> post }}</td>
         </tr>
     @endforeach

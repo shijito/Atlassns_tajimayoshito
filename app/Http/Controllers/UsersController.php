@@ -106,7 +106,7 @@ class UsersController extends Controller
         $otherprofile = User::where('id',$id)->get();
         //postsテーブルとusersテーブルをつなげる。where条件としてpostsのuser_idと取得したidが一致する情報を取得
         $otherposts = Post::with('user')->where('user_id', $id)->latest()->get();
-    
+        //条件のwhereとwhereinの使い分けの理解が必要
 
         return view('users.followsprofile')->with([
             'otherprofile'=>$otherprofile, 'otherposts'=>$otherposts
