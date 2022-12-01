@@ -45,6 +45,8 @@ Route::post('/update','PostsController@update');
 Route::get('/profile','UsersController@profile');
 //プロフィールupdate
 Route::post('/profile','UsersController@profileupdate')->name('profileupdate');
+//ログインユーザー外のプロフィール
+Route::get('/follows/{id}','UsersController@followsprofile');
 
 //検索
 //一覧表示
@@ -59,11 +61,11 @@ Route::post('/usersearch/{id}/unfollow', 'UsersController@unfollow')->name('unfo
 
 //フォロー
 Route::get('/followList','FollowsController@followList');
-Route::get('/followList/{id}','FollowsController@followprofile');
+
 
 //フォロワー
 Route::get('/followerList','FollowsController@followerList');
-Route::get('/followerList/{id}','FollowsController@followerprofile');
+
 
 
 //ログアウト

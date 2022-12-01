@@ -33,12 +33,6 @@ class FollowsController extends Controller
     }
 
 
-    public function followprofile(){
-
-        return view('follows.followprofile');
-    }
-
-
     //フォロワー系
     //フォロワーリスト表示
     public function followerList(){
@@ -52,10 +46,10 @@ class FollowsController extends Controller
             ]);
     }
 
-    public function followerprofile(){
 
-        return view('follows.followerprofile');
-    }
+    
+
+
 
 
 }

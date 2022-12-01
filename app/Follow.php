@@ -11,4 +11,6 @@ class Follow extends Model
     {
         return $this->hasMany('App\Post');
     }
+
+    
 }

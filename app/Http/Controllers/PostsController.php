@@ -8,6 +8,7 @@ use Illuminate\support\Facades\Auth;
 
 use App\User;
 use App\Post;
+use App\Follow;
 
 class PostsController extends Controller
 {

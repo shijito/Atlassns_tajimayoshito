@@ -14,7 +14,7 @@
 <div class="followList_timeline">
     @foreach ($followpost as $followpost)
     <tr>
-        <td><a href="/followList/{{ $followpost->user->id }}"><img src="{{asset('storage/images/' . $followpost->user->images )}}" /></a><td>
+        <td><a href="/follows/{{ $followpost->user->id }}"><img src="{{asset('storage/images/' . $followpost->user->images )}}" /></a><td>
         <td>{{ $followpost->post }}</td>
         <td>{{ $followpost->created_at }}</td>
     </tr>

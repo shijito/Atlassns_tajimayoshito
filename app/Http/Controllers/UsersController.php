@@ -97,5 +97,18 @@ class UsersController extends Controller
         
     }
 
+
+
+    public function followsprofile($id){
+
+        //取得したidを登録しているidの人と一緒の人をテーブルから情報を取得する
+        $otherprofile = User::where('id',$id)->get();
+        
+
+        return view('users.followsprofile')->with([
+            'otherprofile'=>$otherprofile
+        ]);
+    }
+
     
 }
