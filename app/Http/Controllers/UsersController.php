@@ -8,6 +8,7 @@ use Illuminate\support\Facades\Auth;
 
 use App\User;                //User.phpを適用させる
 use App\Follow;              //Follow.phpを適用させる
+use App\Post;
 
 class UsersController extends Controller
 {
@@ -101,12 +102,14 @@ class UsersController extends Controller
 
     public function followsprofile($id){
 
-        //取得したidを登録しているidの人と一緒の人をテーブルから情報を取得する
+        //userテーブルidと取得したidが一致する人の情報を取得する
         $otherprofile = User::where('id',$id)->get();
-        
+        //postsテーブルとusersテーブルをつなげる。where条件としてpostsのuser_idと取得したidが一致する情報を取得
+        $otherposts = Post::with('user')->where('user_id', $id)->latest()->get();
+    
 
         return view('users.followsprofile')->with([
-            'otherprofile'=>$otherprofile
+            'otherprofile'=>$otherprofile, 'otherposts'=>$otherposts
         ]);
     }
 
