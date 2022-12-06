@@ -27,7 +27,7 @@
     <div class="content">
     @csrf
       <!-- 投稿の編集ボタン -->
-      <a class="js-modal-open" href="/update" post="{{ $timeline->post }}" post_id="{{ $timeline->id }}" >編集</a>
+      <a class="js-modal-open" href="/update" post="{{ $timeline->post }}" post_id="{{ $timeline->id }}" ><img src="images/edit.png"></a>
       
     </div>
     <!--削除ボタン-->
@@ -39,7 +39,7 @@
     </form>
   @endforeach
 </div>
- <!--ツイート編集モーダルの中身 -->
+ <!--ツイート編集モーダルの中身 --><!--jsでモーダルの仕組みを設定し、コントローラーで処理している-->
     <div class="modal js-modal">
             <div class="modal__bg js-modal-close"></div>
             <div class="modal__content">
