@@ -45,8 +45,10 @@ Route::post('/update','PostsController@update');
 Route::get('/profile','UsersController@profile');
 //プロフィールupdate
 Route::post('/profile','UsersController@profileupdate')->name('profileupdate');
-//ログインユーザー外のプロフィール
+//他ユーザープロフィール
 Route::get('/follows/{id}','UsersController@followsprofile');
+Route::post('/follows/{id}/follow', 'UsersController@follow');
+Route::post('/follows/{id}/unfollow', 'UsersController@unfollow');
 
 //検索
 //一覧表示

@@ -28,7 +28,7 @@
     @csrf
       <!-- 投稿の編集ボタン -->
       <a class="js-modal-open" href="/update" post="{{ $timeline->post }}" post_id="{{ $timeline->id }}" >編集</a>
-      <input type="image" src="{{ asset('images/edit.png') }}">
+      
     </div>
     <!--削除ボタン-->
     <form action="/trash" method="post">
@@ -46,7 +46,7 @@
               <form action="/update" method="post">
               @csrf
                     <textarea name="uppost" class="modal_post"></textarea>
-                    <input type="hidden" name="id" class="modal_id" value="{{-- $timeline->id --}}"><!--｛｝の中身は--でコメントアウトにできる-->
+                    <input type="hidden" name="id" class="modal_id" value="">
                     <input type="image" src="{{ asset('images/edit.png') }}">
               </form>
               <a class="js-modal-close" href="/update">閉じる</a>
