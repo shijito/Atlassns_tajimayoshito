@@ -12,7 +12,7 @@
 <!--取得したidの人のbio-->
         <dt>bio</dt>
         <dt>{{ $otherprofile -> bio }}</dt>
-
+<!--取得したidの人のフォローボタン-->
         <div class="d-flex justify-content-end flex-grow-1">
             @if(Auth::user()->isFollowing($otherprofile->id))
                 <form action="/follows/{{ $otherprofile->id }}/unfollow" method="post">
@@ -28,7 +28,7 @@
     @endforeach
 
     
-<!--取得したidの人のフォローボタン-->
+
 
 <!--取得したidの人の画像とつぶやき-->
     @foreach ($otherposts as $otherposts)

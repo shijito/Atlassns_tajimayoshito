@@ -22,6 +22,7 @@ class PostsController extends Controller
     public function index(){
         //$timeline = \DB::table('posts')->get(); //データベースのtweets表示をタイムラインと設定
         $timeline = Post::with('user')->get();
+        
         return view('posts.index' , ['timeline'=>$timeline]); //return viewは、return view('ファイル');
     }
 

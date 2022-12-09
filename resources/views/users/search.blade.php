@@ -17,7 +17,7 @@
 <div class="showsearch">
 <!--自分以外-->
   @foreach ($searchlist as $searchlist)
-    @if(Auth::id() != $searchlist->id)
+    @if(Auth::id() != $searchlist->id) <!--usercontroller-->
         <tr>
           <td>{{ $searchlist->username }}</td>  <!--総リストのログインユーザーIDではないものを表示する-->
         </tr>  
