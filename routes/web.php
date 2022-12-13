@@ -47,8 +47,8 @@ Route::get('/profile','UsersController@profile');
 Route::post('/profile','UsersController@profileupdate')->name('profileupdate');
 //他ユーザープロフィール
 Route::get('/follows/{id}','UsersController@followsprofile');
-Route::post('/follows/{id}/follow', 'UsersController@follow');
-Route::post('/follows/{id}/unfollow', 'UsersController@unfollow');
+Route::post('/follows/{id}/follow', 'UsersController@follow');//他ユーザープロフィールからのフォローする
+Route::post('/follows/{id}/unfollow', 'UsersController@unfollow');//他ユーザープロフィールからのフォローを外す
 
 //検索
 //一覧表示

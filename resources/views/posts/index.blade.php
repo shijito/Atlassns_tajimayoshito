@@ -17,7 +17,7 @@
 
 <div class="showtimeline">
   @foreach ($timeline as $timeline) 
-    @if(Auth::user()->isFollowing($timeline->user->id) || $timeline->user_id == Auth::id()) <!--authuser->idかつauthuser->フォローidを表示-->
+    @if(Auth::user()->isFollowing($timeline->user->id) || $timeline->user_id == Auth::id()) <!--authuserがフォローしているユーザーかつ、つぶやきをしているユーザーがログインユーザーと一致を表示-->
       <tr>
         <td><img src="{{asset('storage/images/' . $timeline->user->images )}}" /></td>
         <td>{{ $timeline->user->username }}<td><!--ユーザー名を表示させる必要がある-->

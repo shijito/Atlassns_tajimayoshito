@@ -47,13 +47,13 @@ class User extends Authenticatable
     }
 
     // フォロワー→フォロー
-    public function followUsers()
+    public function followUsers() //フォローされているユーザーの情報扱うとき
     {
         return $this->belongsToMany('App\User', 'follows', 'followed_id', 'following_id');  //(userテーブル、結びつけるテーブル名、結びつけるカラム1、結びつけるカラム2) usersのidカラムとfollowsのカラムを結びつける
     }
 
     // フォロー→フォロワー
-    public function follows()
+    public function follows() //フォローしているユーザーの情報を扱うとき
     {
         return $this->belongsToMany('App\User', 'follows', 'following_id', 'followed_id');  //(userテーブル、結びつけるテーブル名、結びつけるカラム1、結びつけるカラム2) usersのidカラムとfollowsのカラムを結びつける
     }
