@@ -26,6 +26,14 @@ class PostsController extends Controller
         ]);
     }
 
+    protected function create(array $data)
+    {
+        return Post::create([
+            'tweet' => $data['post'],
+        ]);
+    }
+
+
     
     //ツイートを表示
     public function index(){
@@ -36,15 +44,15 @@ class PostsController extends Controller
     }
 
     //tweetを登録↓
-    public function create(Request $request){
+    public function tweet(Request $request){
         $id = Auth::id();   //ログイン中のIDを取得
         //ddd($id);
         $data = $request->input('tweet');   //
-        //$validator = $this->validator($data);
-            // if($validator->fails()){
-            //   return redirect()->back()
-            //     ->withErrors($validator);
-            // }
+        $validator = $this->validator($data);
+            if($validator->fails()){
+              return redirect()->back()
+                ->withErrors($validator);
+            }
         \DB::table('posts')->insert([       //データベースのpostsに追加
             'post' => $data,                //カラム　ー＞　変数
             'user_id' => $id

@@ -35,7 +35,7 @@ Route::post('/added', 'Auth\RegisterController@added');
 //tweetを表示
 Route::get('/top','PostsController@index'); 
 //tweetをDBに登録
-Route::post('/create','PostsController@create');
+Route::post('/create','PostsController@tweet');
 //tweetを削除
 Route::post('/trash','PostsController@delete');
 //tweetを編集
