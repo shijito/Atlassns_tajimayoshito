@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Illuminate\support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 use App\User;
 use App\Post;
@@ -17,11 +17,20 @@ class PostsController extends Controller
     {
         $this->middleware('auth');
     }
+
+    protected function validator(array $data)
+    {
+        
+        return Validator::make($data, [
+            'tweet' => 'required|string|max:150',
+        ]);
+    }
+
     
     //ツイートを表示
     public function index(){
         //$timeline = \DB::table('posts')->get(); //データベースのtweets表示をタイムラインと設定
-        $timeline = Post::with('user')->get();
+        $timeline = Post::with('user')->orderBy('created_at', 'desc')->get();
         
         return view('posts.index' , ['timeline'=>$timeline]); //return viewは、return view('ファイル');
     }
@@ -29,9 +38,15 @@ class PostsController extends Controller
     //tweetを登録↓
     public function create(Request $request){
         $id = Auth::id();   //ログイン中のIDを取得
-        $tweets = $request->input('tweet');   //
+        //ddd($id);
+        $data = $request->input('tweet');   //
+        //$validator = $this->validator($data);
+            // if($validator->fails()){
+            //   return redirect()->back()
+            //     ->withErrors($validator);
+            // }
         \DB::table('posts')->insert([       //データベースのpostsに追加
-            'post' => $tweets,                //カラム　ー＞　変数
+            'post' => $data,                //カラム　ー＞　変数
             'user_id' => $id
         ]);
         return redirect('/top'); //return redirectは、return redirect('url');

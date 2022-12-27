@@ -15,6 +15,10 @@
   {!! Form::close() !!}
 </div>
 
+@if($errors->has('tweet'))  <!--has()でエラー文の1つを指定して表示できる-->
+	{{ $errors->first('tweet') }}
+@endif 
+
 <div class="showtimeline">
   @foreach ($timeline as $timeline) 
     @if(Auth::user()->isFollowing($timeline->user->id) || $timeline->user_id == Auth::id()) <!--authuserがフォローしているユーザーかつ、つぶやきをしているユーザーがログインユーザーと一致を表示-->
