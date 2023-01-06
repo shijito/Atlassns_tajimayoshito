@@ -50,10 +50,11 @@ class RegisterController extends Controller
     {
         
         return Validator::make($data, [
-            'username' => 'required|string|max:255',
-            'mail' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:4|confirmed',
+            'username' => 'required|string|between:2,12',  
+            'mail' => 'required|string|email|between:5,40|unique:users',
+            'password' => 'required|string|between:8,20|alpha_num|confirmed',
         ]);
+        //required(必須)、string(文字列)、between:min,mix(最低文字数～最大文字数)、unique:users(登録済みのアドレス使用不可)、alpha_num(英数字のみ)、confirmed(一致しているかどうか)
     }
 
     /**

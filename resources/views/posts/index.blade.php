@@ -1,7 +1,10 @@
 @extends('layouts.login')
 
 @section('content')
-<h2>機能を実装していきましょう。</h2>
+
+@if($errors->has('tweet'))  <!--has()でエラー文の1つを指定して表示できる-->
+	{{ $errors->first('tweet') }}
+@endif 
 
 <div class="form-group">
   {!! Form::open(['url' => '/create']) !!}
@@ -15,13 +18,10 @@
   {!! Form::close() !!}
 </div>
 
-@if($errors->has('tweet'))  <!--has()でエラー文の1つを指定して表示できる-->
-	{{ $errors->first('tweet') }}
-@endif 
 
 <div class="showtimeline">
   @foreach ($timeline as $timeline) 
-    @if(Auth::user()->isFollowing($timeline->user->id) || $timeline->user_id == Auth::id()) <!--authuserがフォローしているユーザーかつ、つぶやきをしているユーザーがログインユーザーと一致を表示-->
+    @if(Auth::user()->isFollowing($timeline->user->id) || $timeline->user_id === Auth::id()) <!--authuserがフォローしているユーザーかつ、つぶやきをしているユーザーがログインユーザーと一致を表示-->
       <tr>
         <td><img src="{{asset('storage/images/' . $timeline->user->images )}}" /></td>
         <td>{{ $timeline->user->username }}<td><!--ユーザー名を表示させる必要がある-->

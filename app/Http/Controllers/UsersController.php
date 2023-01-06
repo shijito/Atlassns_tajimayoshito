@@ -17,6 +17,15 @@ class UsersController extends Controller
     {
         $this->middleware('auth');
     }
+
+    protected function validator(array $data)
+    {
+        
+        return Validator::make($data, [
+            'username' => 'required|string|between:2,12',
+        ]);
+    }
+
     
     //プロフィール
     public function profile(){
@@ -28,9 +37,14 @@ class UsersController extends Controller
     public function profileupdate(Request $request){
         
         $user = Auth::id();
-
         $image = $request->file('iconimage')->store('public/images');
         
+        $validator = $this->validator($data);
+                if($validator->fails()){
+                    return redirect()->back()
+                    ->withErrors($validator);
+                }
+
         User::where('id', $user)->update([      //idとログインユーザーのidが一致するもの
         'username' => $request->input('username'),
         'mail' => $request->input('mail'),

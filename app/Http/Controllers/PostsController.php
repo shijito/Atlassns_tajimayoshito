@@ -47,7 +47,7 @@ class PostsController extends Controller
     public function tweet(Request $request){
         $id = Auth::id();   //ログイン中のIDを取得
         //ddd($id);
-        $data = $request->input('tweet');   //
+        $data = $request->input();   //
         $validator = $this->validator($data);
             if($validator->fails()){
               return redirect()->back()
