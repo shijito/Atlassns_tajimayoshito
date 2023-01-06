@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 use App\User;                //User.phpを適用させる
 use App\Follow;              //Follow.phpを適用させる
@@ -16,14 +17,6 @@ class UsersController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-    }
-
-    protected function validator(array $data)
-    {
-        
-        return Validator::make($data, [
-            'username' => 'required|string|between:2,12',
-        ]);
     }
 
     
@@ -39,7 +32,12 @@ class UsersController extends Controller
         $user = Auth::id();
         $image = $request->file('iconimage')->store('public/images');
         
-        $validator = $this->validator($data);
+        $validator = Validator::make($request->all(), [
+            'username' => 'required|string|between:2,12',
+            'mail' => 'required|string|email|between:5,40|unique:users',
+            'newpassword' => 'required|string|between:8,20|alpha_num|confirmed',
+            'bio' => 'max:150|nullable',
+        ]);
                 if($validator->fails()){
                     return redirect()->back()
                     ->withErrors($validator);
