@@ -22,19 +22,26 @@
 <body>
     <header>
         <div id = "head">
-        <h1><a href="/top"><img src="{{asset('images/atlas.png')}}"></a></h1>
-            <div id="">
-                <div id="">
-                    <p>{{ Auth::user()->username }}さん<img src="{{asset('storage/images/' . Auth::user()->images )}}" /></p>
+            <div class="head-wrapper">
+                <div class="head-block atlasicon">
+                    <a href="/top"><img src="{{asset('images/atlas.png')}}"></a>
+                </div>
+                <div class="head-block nameview">
+                    <p>{{ Auth::user()->username }}　　さん</p>
                 <div>
-                <div class="menu">
-                    <input type="checkbox" id="menu_bar01"/>
-                    <label for="menu_bar01"></label>
-                <ul id="links01">
-                    <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
-                    <li><a href="/logout">ログアウト</a></li>
-                </ul>
+                <div class="head-block menuber">
+                    <div class="menu">
+                        <input type="checkbox" id="menu_bar01"/>
+                        <label for="menu_bar01"></label>
+                    <ul id="links01">
+                        <li><a href="/top">ホーム</a></li>
+                        <li><a href="/profile">プロフィール</a></li>
+                        <li><a href="/logout">ログアウト</a></li>
+                    </ul>
+                </div>
+                <div class="head-block usericon">
+                    <img src="{{asset('storage/images/' . Auth::user()->images )}}" />
+                </div>
             </div>
         </div>
     </header>

@@ -37,6 +37,7 @@ class UsersController extends Controller
             'mail' => 'required|string|email|between:5,40|unique:users',
             'newpassword' => 'required|string|between:8,20|alpha_num|confirmed',
             'bio' => 'max:150|nullable',
+            'iconimage' => 'image|nullable',
         ]);
                 if($validator->fails()){
                     return redirect()->back()
