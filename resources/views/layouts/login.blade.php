@@ -23,21 +23,32 @@
     <header>
         <div id = "head">
             <div class="head-wrapper">
-                <div class="head-block atlasicon">
+                <div class="head-block left">
                     <a href="/top"><img src="{{asset('images/atlas.png')}}"></a>
                 </div>
                 <div class="head-block nameview">
                     <p>{{ Auth::user()->username }}　　さん</p>
-                <div>
+                </div>
                 <div class="head-block menuber">
-                    <div class="menu">
+                    <div class="menuber-01">
+                        <p class="arrow bottom"></p>
+                        <div class="submenu01">
+                            <ul>
+                                <li><a href="/top">ホーム</a></li>
+                                <li><a href="/profile">プロフィール</a></li>
+                                <li><a href="/logout">ログアウト</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="menu">
                         <input type="checkbox" id="menu_bar01"/>
                         <label for="menu_bar01"></label>
-                    <ul id="links01">
-                        <li><a href="/top">ホーム</a></li>
-                        <li><a href="/profile">プロフィール</a></li>
-                        <li><a href="/logout">ログアウト</a></li>
-                    </ul>
+                        <ul id="links01">
+                            <li><a href="/top">ホーム</a></li>
+                            <li><a href="/profile">プロフィール</a></li>
+                            <li><a href="/logout">ログアウト</a></li>
+                        </ul>
+                    </div> -->
                 </div>
                 <div class="head-block usericon">
                     <img src="{{asset('storage/images/' . Auth::user()->images )}}" />
@@ -51,19 +62,21 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>{{ Auth::user()->username }}さんの</p>
-                <div>
-                    <p>フォロー数</p>
-                    <p>{{ Auth::user()->follows()->get()->count() }}名</p>
+                <p class="side-bar-username">{{ Auth::user()->username }}さんの</p>
+                <div class="side-bar-content">
+                    <p class="side-bar-content">フォロー数</p>
+                    <p class="side-bar-content-number1">{{ Auth::user()->follows()->get()->count() }}人</p>
                 </div>
-                <p class="btn"><a href="/followList">フォローリスト</a></p>
-                <div>
-                    <p>フォロワー数</p>
-                    <p>{{ Auth::user()->followUsers()->get()->count() }}名</p>
+                <p class="btn list"><a href="/followList">フォローリスト</a></p>
+                <div class="side-bar-content">
+                    <p class="side-bar-content">フォロワー数</p>
+                    <p class="side-bar-content-number2">{{ Auth::user()->followUsers()->get()->count() }}人</p>
                 </div>
-                <p class="btn"><a href="/followerList">フォロワーリスト</a></p>
+                <p class="btn list"><a href="/followerList">フォロワーリスト</a></p>
             </div>
-            <p class="btn"><a href="/search">ユーザー検索</a></p>
+            <p class="btn-user-search">
+                <a href="/search">ユーザー検索</a>
+            </p>
         </div>
     </div>
     <footer>

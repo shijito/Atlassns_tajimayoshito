@@ -4,56 +4,148 @@ html{
 body{
   
 }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 /* header */
 header{
   background:#186AC9;
+  height: 115px;
+  display: flex;
+  align-items: center;
+}
+/*head*/
 
+.head-wrapper {
+  display: flex;
+  align-items: center;
+  
+}
+
+.head-wrapper>div:first-of-type {
+  margin-right: auto;
+}
+
+.menuber {
+  
+}
+
+.left img {
+  width: 138px;  /*画像サイズを変更*/
+}
+
+.submenu01 {
+  position: absolute;
+  background-color: antiquewhite;
+  margin-top: 45px;
+  width: 140px;
+  /* display: none; */
+}
+
+
+
+
+/*side-bar*/
+.side-bar-content {
+  display: flex;
+  padding: 0 0 0 10px;
+}
+
+.list{
+  text-align: right;
+  margin: 20px;
+}
+
+.btn-user-search {
+  text-align: center;
+  margin: 70px;
+}
+
+.side-bar-username {
+  margin: 40px 20px;
+}
+
+.side-bar-content-number1 {
+  padding: 0 0 0 65px;
+}
+
+.side-bar-content-number2 {
+  padding: 0 0 0 50px;
+}
+
+
+/*profile*/
+.UserProfile {
+  display: flex;
+  
 }
 
 .profile-image {
-  width: 15%;
-}
-
-
-.UserProfile {
-  margin: 0 auto;
-
+  
 }
 
 .profileupdate {
-  text-align: center;
+  display: inline-block;
+} 
+
+/* .form {
+  margin: 0 auto;
+  padding: 50px 0 0 0;
+} */
+
+
+tr {
+  display: block;
+  padding-bottom: 20px;
 }
 
 th {
   text-align: left;
-  padding-right: 50px;
+  /* padding-right: 50px; */
   font-size: 25px;
 }
 
-td { 
-  padding-bottom: 20px;
+.btn-update {
+  text-align: center;
 }
+
+
 
 
 
 /*↓アコーディオンメニュー　開いた状態の矢印描画まで*/
 /*アコーディオン全体*/
-.menuber {
-  width: auto;
-  padding: 10px 10px 20px;
-  
+
+.arrow{
+  width: 20px; /* ボックスの横幅を指定する */
+  height: 20px; /* ボックスの高さを指定する */
+  margin: 0 20px;
+  border-top: 2px solid #666666; /* 境界線の上部を実線に指定する*/
+  border-right: 2px solid #666666;/* 境界線の上部を実線に指定する*/
+  display: inline-block; /* インライン要素化 */
 }
 
-.menu {
+.bottom {
+  transform: rotate(135deg); /* ボックスを回転させる（下向き矢印） */
+}
+
+/* .menuber {
+  width: auto;
+  padding: 10px 10px 20px;
+} */
+
+/* .menu {
     width: 20%;
     padding: 10px 10px 20px;
-
-  }
-.menu input {
-    display: none; /*チェックボックスを隠す*/
-  }
+  } */
+ /* .menu input { */
+    /* display: none; チェックボックスを隠す */
+  /* }  */
 /*バー部分*/
-.menu label {
+/* .menu label {
     cursor :pointer;
     display: block;
     text-decoration: none;
@@ -63,35 +155,36 @@ td {
     margin: 0 0 10px;
     padding: 10px;
     
-  }
+  } */
 /*開いたときに表示される部分*/
-.menu ul {
+/* .menu ul {
     margin: 0;
     padding: 0;
     list-style: none;
     margin-bottom: 1px;
-  }
-.menu li {
+  } */
+/* .menu li {
     height: 0;
     overflow-y: hidden;
     transition: padding-bottom 0.5s, padding-top 0.5s; /*閉じるときのアニメーション*/
-    -webkit-transition: padding-bottom 0.5s, padding-top 0.5s;
+    /* -webkit-transition: padding-bottom 0.5s, padding-top 0.5s;
     -moz-transition: padding-bottom 0.5s, padding-top 0.5s;
     -ms-transition: padding-bottom 0.5s, padding-top 0.5s;
     -o-transition: padding-bottom 0.5s, padding-top 0.5s;
-  }
-#menu_bar01:checked ~ #links01 li{
-    height: auto; /*開いたときに表示されるliの高さ*/
+  } */
+/* #menu_bar01:checked ~ #links01 li{ 
+    height: auto; 
     opacity: 1;
     background: #f1f1f1;
     padding: 10px;
-  }
+  } */
 /*開いたときの下の余白*/
-    #menu_bar01:checked ~ #links01 li:last-child{
+    /* #menu_bar01:checked ~ #links01 li:last-child{
     margin-bottom: 20px;
-  }
+  } */
+
 /*閉じた状態の矢印描画*/
-.menu label:after{
+/* .menu label:after{
     content:"";
     display:block;
     width:8px;
@@ -106,9 +199,9 @@ td {
     top: 0;
     bottom: 15%;
     margin: auto;
-  }
+  } */
 /*開いた状態の矢印描画*/
-.menu input[type=checkbox]:checked + label:after{
+/* .menu input[type=checkbox]:checked + label:after{
     content:"";
     display:block;
     width:8px;
@@ -123,7 +216,7 @@ td {
     top: 7%;
     bottom: 0;
     margin: auto;
-  }
+  } */
 /*アコーディオンメニュー終わり*/
 
 /* main content */
