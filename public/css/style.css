@@ -10,6 +10,8 @@ body{
   padding: 0;
 }
 
+
+
 /* header */
 header{
   background:#186AC9;
@@ -80,16 +82,16 @@ header{
 /*profile*/
 .UserProfile {
   display: flex;
-  
 }
 
 .profile-image {
-  
+  padding-left: 300px;
+  padding-top: 90px;
 }
 
-.profileupdate {
+/* .profileupdate {
   display: inline-block;
-} 
+}  */
 
 /* .form {
   margin: 0 auto;
@@ -99,18 +101,68 @@ header{
 
 tr {
   display: block;
-  padding-bottom: 20px;
+  padding-bottom: 70px;
+  padding-left: 50px;
 }
 
 th {
   text-align: left;
-  /* padding-right: 50px; */
   font-size: 25px;
+}
+
+.profile-input {
+  min-width: 500px;
+  min-height: 50px;  
+}
+
+input[type="text"] {
+  font-size: 25px;
+}
+
+.username-form {
+  padding-top: 100px;  
+}
+
+/* input[type="file"] {
+  display: none;
+}
+
+.iconimage {
+  padding: 10px 40px;
+  color: #ffffff;
+  background-color: #384878;
+  
+} */
+
+.user-name {
+  padding-right: 200px;
+}
+
+.mail-adress {
+  padding-right: 190px;
+}
+
+.password {
+  padding-right: 215px;
+}
+
+.password-confirm {
+  padding-right: 115px;
+} 
+
+.bio {
+  padding-right: 295px;
+}
+
+.icon-image {
+  padding-right: 198px;
 }
 
 .btn-update {
   text-align: center;
 }
+
+
 
 
 
