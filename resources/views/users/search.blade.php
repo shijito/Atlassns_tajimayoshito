@@ -1,14 +1,19 @@
 @extends('layouts.login')
 
 @section('content')
-
-<form action="/usersearch" method="post">
-  <div class="form-group">
-    @csrf
-    <input type="text" name="usersearch" placeholder="ユーザー名">
-    <input type="submit" class="btn btn-success pull-right">
-  </div>
-</form>
+<div class="common-top">
+  <form action="/usersearch" method="post">
+    <div class="search-block">
+      @csrf
+      <input class="search-form" type="text" name="usersearch" placeholder="ユーザー名">
+      <div class="my-parts">
+        <span>
+          <input type="submit"  class="btn btn-search">
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
 
 @if(!empty($search_name)) <!--空ではなく、検索が入力されたら表示する-->
   <p>検索ワード：{{ $search_name }}</p> <!--useacontrollerのキーワード検索を表示する場所-->

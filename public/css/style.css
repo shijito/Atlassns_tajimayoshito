@@ -10,8 +10,6 @@ body{
   padding: 0;
 }
 
-
-
 /* header */
 header{
   background:#186AC9;
@@ -48,8 +46,6 @@ header{
 }
 
 
-
-
 /*side-bar*/
 .side-bar-content {
   display: flex;
@@ -77,6 +73,42 @@ header{
 .side-bar-content-number2 {
   padding: 0 0 0 50px;
 }
+
+/*上段border-bottom*/
+.common-top {
+  height: 205px;
+  border-bottom: 10px solid #666666;
+}
+
+
+/*top*/
+.user-form {
+  display: flex;
+}
+
+
+.form-control {
+  min-height: 150px;
+  
+} 
+
+.pull-right {
+  width: 40%;
+  height: auto;
+  text-align: right;
+}
+
+
+
+/* .showtimeline {
+  border-bottom: 1px solid #666666;
+} */
+
+.top-usericon {
+  padding-left: 110px;
+  padding-top: 50px;
+}
+
 
 
 /*profile*/
@@ -162,7 +194,50 @@ input[type="text"] {
   text-align: center;
 }
 
+/*search.blade*/
+.search-block {
+  display: flex;
+}
 
+
+
+input[type="text"] {
+  width: 400px;
+  height: 50px;
+}
+
+/* .my-parts {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	font-size: 50px;
+	position: relative;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.1);
+	cursor: pointer;
+}
+.my-parts span {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	width: 56%;
+	height: 56%;
+	border-radius: 50%;
+	margin: -.28em 0 0 -.28em;
+	border: .12em solid #673AB7;
+}
+.my-parts span::after {
+	position: absolute;
+	display: block;
+	content: "";
+	top: 50%;
+	left: 50%;
+	width: 72%;
+	height: 36%;
+	background: #673AB7;
+	margin: .2em 0 0 .14em;
+	transform: rotate(45deg);
+} */
 
 
 

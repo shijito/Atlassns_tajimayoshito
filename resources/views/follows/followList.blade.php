@@ -1,14 +1,15 @@
 @extends('layouts.login')
 
 @section('content')
-
-<div class="allfollowList">
-    @foreach ($follow_user as $follow_user)
-    <tr>
-        <!--ログインユーザーがフォローした人の一覧を表示する-->
-        <td><img src="{{asset('storage/images/' . $follow_user->images )}}" /><td>
-    <tr>
-    @endforeach
+<div class="common-top">
+    <div class="allfollowList">
+        @foreach ($follow_user as $follow_user)
+        <tr>
+            <!--ログインユーザーがフォローした人の一覧を表示する-->
+            <td><img src="{{asset('storage/images/' . $follow_user->images )}}" /><td>
+        <tr>
+        @endforeach
+    </div>
 </div>
 
 <div class="followList_timeline">

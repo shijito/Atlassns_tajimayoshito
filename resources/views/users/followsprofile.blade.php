@@ -1,7 +1,7 @@
 @extends('layouts.login')
 
 @section('content')
-
+<div class="common-top">
     @foreach ($otherprofile as $otherprofile)
 <!--取得したidの人の画像-->
         <dt><img src="{{asset('storage/images/' . $otherprofile->images )}}" /></dt>
@@ -25,8 +25,9 @@
                     <button type="submit" class="btn btn-primary">フォローする</button>
                 </form>
             @endif
+        </div>
     @endforeach
-
+</div>
     
 
 

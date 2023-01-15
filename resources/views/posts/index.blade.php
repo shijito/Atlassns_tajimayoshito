@@ -6,28 +6,38 @@
 	{{ $errors->first('tweet') }}
 @endif 
 
-<div class="form-group">
-  {!! Form::open(['url' => '/create']) !!}
-  {{ csrf_field() }}
+<div class="common-top">
+  <div class="user-form">
+    <div class="top-usericon">
+      <img src="{{asset('storage/images/' . Auth::user()->images )}}" />  
+    </div>
+
     <div class="form-group">
-      {!! Form::input('text','tweet', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください。']) !!}
+      {!! Form::open(['url' => '/create']) !!}
+      {{ csrf_field() }}
+        <div class="tweet-form">
+          {!! Form::input('text','tweet', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください。']) !!}
+        </div>
+        <div class="">
+          <input type="image" src="images/post.png" class="btn btn-success pull-right">
+        </div>
+      {!! Form::close() !!}
     </div>
-    <div>
-      <input type="image" src="images/post.png" class="btn btn-success pull-right">
-    </div>
-  {!! Form::close() !!}
+  </div>
 </div>
 
 
 <div class="showtimeline">
   @foreach ($timeline as $timeline) 
     @if(Auth::user()->isFollowing($timeline->user->id) || $timeline->user_id === Auth::id()) <!--authuserがフォローしているユーザーかつ、つぶやきをしているユーザーがログインユーザーと一致を表示-->
-      <tr>
-        <td><img src="{{asset('storage/images/' . $timeline->user->images )}}" /></td>
-        <td>{{ $timeline->user->username }}<td><!--ユーザー名を表示させる必要がある-->
-        <td>{{ $timeline->post }}</td>  
-        <td>{{ $timeline->created_at }}</td>
-      </tr>
+      <div class="taimeline-block"> 
+        <tr>
+          <td><img src="{{asset('storage/images/' . $timeline->user->images )}}" /></td>
+          <td>{{ $timeline->user->username }}<td><!--ユーザー名を表示させる必要がある-->
+          <td>{{ $timeline->post }}</td>  
+          <td>{{ $timeline->created_at }}</td>
+        </tr>
+      </div>
     <!--編集（アップデート）-->
       <div class="content">
       @csrf
