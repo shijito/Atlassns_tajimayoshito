@@ -34,9 +34,9 @@
                         <p class="arrow bottom"></p>
                         <div class="submenu01">
                             <ul>
-                                <!-- <li><a href="/top">ホーム</a></li>
+                                <li><a href="/top">ホーム</a></li>
                                 <li><a href="/profile">プロフィール</a></li>
-                                <li><a href="/logout">ログアウト</a></li> -->
+                                <li><a href="/logout">ログアウト</a></li>
                             </ul>
                         </div>
                     </div>

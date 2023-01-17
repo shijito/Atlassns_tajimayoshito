@@ -11,4 +11,8 @@
   <p class="btn"><a href="/login">ログイン画面へ</a></p>
 </div>
 
+
+
+
+
 @endsection

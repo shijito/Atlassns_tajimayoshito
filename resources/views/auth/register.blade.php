@@ -1,8 +1,7 @@
-<div class="register">
-	@extends('layouts.logout')
+@extends('layouts.logout')
 
-	@section('content')
-
+@section('content')
+<div  class="register"></div>
 	{!! Form::open() !!}
 
 	<h2>新規ユーザー登録</h2>
@@ -38,5 +37,5 @@
 	{!! Form::close() !!}
 
 
-	@endsection
-</div>
+
+@endsection

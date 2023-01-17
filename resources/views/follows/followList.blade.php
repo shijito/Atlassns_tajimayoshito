@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="common-top">
+    <p>Follow List</p>
     <div class="allfollowList">
         @foreach ($follow_user as $follow_user)
         <tr>
