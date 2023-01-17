@@ -5,11 +5,11 @@
   <form action="/usersearch" method="post">
     <div class="search-block">
       @csrf
-      <input class="search-form" type="text" name="usersearch" placeholder="ユーザー名">
+      <div class="usersearc-form">
+        <input class="search-form" type="text" name="usersearch" placeholder="ユーザー名">
+      </div>
       <div class="my-parts">
-        <span>
-          <input type="submit"  class="btn btn-search">
-        </span>
+          <input type="image" src="{{ asset('images/search-icon.png') }}" class="btn btn-search">
       </div>
     </div>
   </form>
@@ -23,8 +23,9 @@
 <!--自分以外-->
   @foreach ($searchlist as $searchlist)
     @if(Auth::id() != $searchlist->id) <!--usercontroller-->
-        <tr>
-          <td>{{ $searchlist->username }}</td>  <!--総リストのログインユーザーIDではないものを表示する-->
+        <tr class="searchresult">
+          <td class="searchresult-image"><img src="{{asset('storage/images/' . $searchlist->images )}}" /></td>
+          <td class="searchresult-username">{{ $searchlist->username }}</td>  <!--総リストのログインユーザーIDではないものを表示する-->
         </tr>  
       <div class="d-flex justify-content-end flex-grow-1">
         @if(Auth::user()->isFollowing($searchlist->id))

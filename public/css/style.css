@@ -133,7 +133,7 @@ header{
 
 tr {
   display: block;
-  padding-bottom: 70px;
+  padding-bottom: 60px;
   padding-left: 50px;
 }
 
@@ -149,10 +149,11 @@ th {
 
 input[type="text"] {
   font-size: 25px;
+  text-indent:10px;
 }
 
 .username-form {
-  padding-top: 100px;  
+  padding-top: 90px;  
 }
 
 /* input[type="file"] {
@@ -197,48 +198,41 @@ input[type="text"] {
 /*search.blade*/
 .search-block {
   display: flex;
+  padding-top: 70px;
+  padding-left: 80px;
 }
 
-
-
-input[type="text"] {
-  width: 400px;
+.search-form {
+  width: 440px;
   height: 50px;
+  margin-right: 20px;
 }
 
-/* .my-parts {
-	display: inline-block;
-	width: 50px;
-	height: 50px;
-	font-size: 50px;
-	position: relative;
-	box-shadow: 0 0 0 1px rgba(0,0,0,.1);
-	cursor: pointer;
+.my-parts {
+  background-color: #186AC9;
+  width: 55px;
+  height: 55px;
+  position: relative;
+  /*角を削る*/
 }
-.my-parts span {
-	position: absolute;
-	display: block;
-	top: 50%;
-	left: 50%;
-	width: 56%;
-	height: 56%;
-	border-radius: 50%;
-	margin: -.28em 0 0 -.28em;
-	border: .12em solid #673AB7;
-}
-.my-parts span::after {
-	position: absolute;
-	display: block;
-	content: "";
-	top: 50%;
-	left: 50%;
-	width: 72%;
-	height: 36%;
-	background: #673AB7;
-	margin: .2em 0 0 .14em;
-	transform: rotate(45deg);
-} */
 
+.btn-search {
+  background-color: #186AC9;
+  width: 40px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.showsearch {
+  margin-top: 50px;
+}
+
+.searchresult {
+  
+}
 
 
 

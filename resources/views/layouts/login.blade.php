@@ -75,7 +75,7 @@
                 <p class="btn list"><a href="/followerList">フォロワーリスト</a></p>
             </div>
             <p class="btn-user-search">
-                <a href="/search">ユーザー検索</a>
+                <a href="/search" >ユーザー検索</a> <!--class="btn btn-primary"--> 
             </p>
         </div>
     </div>

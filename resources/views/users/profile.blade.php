@@ -57,7 +57,8 @@
         </tr> 
       </table>
       <div class="btn-update">
-        <input type="submit" name="btn-update" ></button><!--更新ボタン-->
+        <!-- <input type="submit" name="btn-update" class="btn btn-primary"></input>更新ボタン -->
+        <button type="submit" class="btn btn-primary">更新</button>
       </div>
     </form>
   </div>
