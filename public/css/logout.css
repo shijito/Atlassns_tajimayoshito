@@ -27,9 +27,7 @@ header > p {
     color: #fff;
 }
 
-.atlassns {
-    text-align: center;
-}
+/*login*/
 
 .atlass-logout {
     /* display: flex; */
@@ -38,6 +36,7 @@ header > p {
 }
 
 .atlassns {
+    text-align: center;
     font-size: 20px;
     color: #fff;
 }
@@ -97,4 +96,71 @@ header > p {
 .atlassns-add > p > a{
     color: transparent;
     color: #fff;
+}
+
+/*register*/
+
+.addatlassns {
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    margin-top: 40px;
+}
+
+.login-username {
+    margin-top: 50px;
+    margin-left: 805px;
+    color: #fff;
+}
+
+.login-nameform {
+    margin-top: 5px;
+    margin-left: 805px;
+}
+
+.login-addmaillabel {
+    margin-top: 20px;
+    margin-left: 805px;
+    color: #fff;
+}
+
+.login-addmaillform {
+    margin-top: 5px;
+    margin-left: 805px;
+}
+
+.register-btn {
+    margin-top: 30px;
+    margin-left: 955px;
+}
+
+.registerbtn {
+    width: 160px;
+    height: 40px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius:  10px;
+}
+
+/*add*/
+#clear {
+    margin: 0 auto;
+}
+
+.text-top {
+    text-align: center;
+    color: #fff;
+}
+
+.text-bottom {
+    /* text-align: left; */
+    color: #fff;
+}
+
+.text-bottom > p {
+    text-align: center;
+    display: block;
+    list-style: none;
+    padding: 0;
 }
