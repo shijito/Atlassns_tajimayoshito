@@ -2,9 +2,99 @@
 
 html{
     height: 100%;
+
 }
 
 body{
-    height: 100%;
-    background: #186AC9;
+    /* height: 100%;
+    background: #186AC9; */
+    height:100vh;
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #d9f17a 0%, #0c6fbf 54%);
+}
+
+header {
+    text-align: center;
+}
+
+h1 > img {
+    width: 200px;
+    margin-top: 130px;
+}
+
+header > p {
+    font-size: 40px;
+    color: #fff;
+}
+
+.atlassns {
+    text-align: center;
+}
+
+.atlass-logout {
+    /* display: flex; */
+    /* justify-content: center; */
+    margin-top: 100px;
+}
+
+.atlassns {
+    font-size: 20px;
+    color: #fff;
+}
+
+.login-maillabel{
+    margin-top: 50px;
+    margin-left: 805px;
+    color: #fff;
+    text-transform: lowercase;
+}
+
+.login-maillform {
+    margin-top: 5px;
+    margin-left: 805px;
+}
+
+.login-passlabel {
+    margin-top: 20px;
+    margin-left: 805px;
+    color: #fff;
+    text-transform: lowercase;
+}
+
+.login-passform {
+    margin-top: 5px;
+    margin-left: 805px;
+}
+
+.input {
+    width: 23em;
+    max-width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 10px
+}
+
+.login-btn  {
+    margin-top: 30px;
+    margin-left: 955px;
+}
+
+.loginbtn {
+    width: 160px;
+    height: 40px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius:  10px
+}
+
+.atlassns-add {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.atlassns-add > p > a{
+    color: transparent;
+    color: #fff;
 }
