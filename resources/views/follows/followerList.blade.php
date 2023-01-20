@@ -4,7 +4,7 @@
 <div class="common-top">
     <div class="allfollowList">
         <p class="follow-text">Follower List</p>
-        <div class="class="allfollow-icon">
+        <div class="allfollow-icon">
             @foreach ($follower_user as $follower_user)
                 <tr>
                     <!--ログインユーザーのフォロワーの一覧を表示する-->
@@ -17,11 +17,18 @@
 
 <div class="followList-timeline">
     @foreach ($followerpost as $followerpost)
-    <tr>
-        <td><a href="/follows/{{ $followerpost->user->id }}"><img src="{{asset('storage/images/' . $followerpost->user->images )}}"  /></a></td>
-        <td>{{ $followerpost->post }}</td>
-        <td>{{ $followerpost->created_at }}</td>
-    </tr>
+    <div class="follow-timeline">
+        <table class="follow-content" >
+            <tr>
+                <td rowspan="2" class="follow-icon"><a href="/follows/{{ $followerpost->user->id }}"><img src="{{asset('storage/images/' . $followerpost->user->images )}}"  /></a></td>
+                <td class="follow-username">{{ $followerpost->user->username }}</td>
+                <td class="follow-tweettime">{{ $followerpost->created_at }}</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="follow-tweet">{{ $followerpost->post }}</td>
+            </tr>
+        </table>
+    </div>
     @endforeach
 </div>
 
