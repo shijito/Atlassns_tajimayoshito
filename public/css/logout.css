@@ -151,16 +151,21 @@ header > p {
 .text-top {
     text-align: center;
     color: #fff;
+    padding-top: 80px;
 }
 
 .text-bottom {
-    /* text-align: left; */
+    text-align: center;
     color: #fff;
+    padding-top: 50px;
 }
 
 .text-bottom > p {
+    display: inline-block;
+    text-align: left;
+}
+
+.logincomplete-btn {
     text-align: center;
-    display: block;
-    list-style: none;
-    padding: 0;
+    padding-top: 30px;
 }
