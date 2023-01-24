@@ -54,12 +54,14 @@ header{
 
 .list{
   text-align: right;
-  margin: 20px;
+  margin: 30px 0;
 }
 
 .btn-user-search {
   text-align: center;
-  margin: 70px;
+  margin-top: 60px;
+  border-top: 1px solid ;
+  padding-top: 30px;
 }
 
 .side-bar-username {
@@ -351,11 +353,56 @@ table.follow-content > tbody > tr > td.follow-tweettime {
 }
 
 
-/*register*/
-.register {
-  background-color: #D9AFD9;
-  background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+/*follow.profile*/
+.followprofile-table {
+  table-layout: auto;
+  width: 100%;
+  height: 100%;
+  /* display: block; */
+  /* padding-top: 50px; */
+  border: 1px solid black;
 }
+
+.followprofile-name ,  .followprofile-username , .followprofile-bio , .followprofile-comment {
+  font-size: 20px;
+}
+
+.followprofile-icon {
+  width: 14%;
+  padding-top: 50px;
+  text-align: end;
+}
+
+.followprofile-name {
+  width: 15%;
+  height: 40%;
+  vertical-align: middle;
+  padding-left: 20px;
+}
+
+.followprofile-username {
+  vertical-align: middle;
+}
+
+.followprofile-bio {
+  width: 15%;
+  vertical-align: top;
+  padding-left: 20px;
+}
+
+.followprofile-comment {
+  vertical-align: top;
+}
+
+.followprofile-btn {
+  text-align: end;
+  padding-right: 20px;
+}
+
+
+
+
+
 
 
 

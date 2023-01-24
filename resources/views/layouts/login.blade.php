@@ -34,9 +34,9 @@
                         <p class="arrow bottom"></p>
                         <div class="submenu01">
                             <ul>
-                                <li><a href="/top">ホーム</a></li>
+                                <!-- <li><a href="/top">ホーム</a></li>
                                 <li><a href="/profile">プロフィール</a></li>
-                                <li><a href="/logout">ログアウト</a></li>
+                                <li><a href="/logout">ログアウト</a></li> -->
                             </ul>
                         </div>
                     </div>
@@ -78,9 +78,9 @@
                     <button class="btn btn-primary"><a href="/followerList">フォロワーリスト</a></button>
                 </p>
             </div>
-            <p class="btn-user-search">
+            <div class="btn-user-search">
                 <button class="btn btn-primary"><a href="/search" >ユーザー検索</a></button> <!--class="btn btn-primary"--> 
-            </p>
+            </div>
         </div>
     </div>
     <footer>
