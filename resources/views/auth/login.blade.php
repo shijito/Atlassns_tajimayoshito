@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="atlass-logout">
-    {!! Form::open() !!}
 
+    {!! Form::open() !!}
+    <div class="atlass-logout">
         <p class="atlassns"> AtlasSNSへようこそ</p>
         <div class="login-maillabel">
             {{ Form::label('mail adress') }}
@@ -24,8 +24,9 @@
         <div class="atlassns-add">
             <p><a href="/register">新規ユーザーの方はこちら</a></p>
         </div>
-    {!! Form::close() !!}
-</div>
+    </div>
+        {!! Form::close() !!}
+
 
 
 @endsection

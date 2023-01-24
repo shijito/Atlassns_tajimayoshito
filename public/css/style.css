@@ -288,7 +288,9 @@ input[type="text"] {
 }
 
 .allfollow-icon {
-  width: 50%;
+  width: 48%;
+  padding-left: 85px;
+  padding-top: 20px;
 }
 
 .follow-text {
