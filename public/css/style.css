@@ -74,6 +74,10 @@ header{
   padding: 0 0 0 50px;
 }
 
+a {
+  color: #fff;
+}
+
 /*上段border-bottom*/
 .common-top {
   height: 205px;
@@ -278,9 +282,13 @@ input[type="text"] {
 }
 
 
-/*fllow*/
+/*follow*/
 .allfollowList {
   display: flex;
+}
+
+.allfollow-icon {
+  width: 50%;
 }
 
 .follow-text {
@@ -300,7 +308,7 @@ input[type="text"] {
 .follow-content {
   table-layout: auto;
   width: 100%;
-  border: 1px solid black;  
+  /* border: 1px solid black;   */
 }
 
 .follow-icon {
