@@ -30,28 +30,34 @@
 <div class="showtimeline">
   @foreach ($timeline as $timeline) 
     @if(Auth::user()->isFollowing($timeline->user->id) || $timeline->user_id === Auth::id()) <!--authuserがフォローしているユーザーかつ、つぶやきをしているユーザーがログインユーザーと一致を表示-->
-      <div class="taimeline-block"> 
-        <tr>
-          <td><img src="{{asset('storage/images/' . $timeline->user->images )}}" /></td>
-          <td>{{ $timeline->user->username }}<td><!--ユーザー名を表示させる必要がある-->
-          <td>{{ $timeline->post }}</td>  
-          <td>{{ $timeline->created_at }}</td>
-        </tr>
+      <div class="follow-timeline"> 
+        <table class="follow-content" >
+          <tr>
+            <td rowspan="2" class="follow-icon"><img src="{{asset('storage/images/' . $timeline->user->images )}}" /></td>
+            <td class="follow-username">{{ $timeline->user->username }}<td><!--ユーザー名を表示させる必要がある-->
+            <td class="follow-tweettime">{{ $timeline->created_at }}</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="follow-tweet">{{ $timeline->post }}</td>  
+          </tr>
+        </table>
       </div>
     <!--編集（アップデート）-->
-      <div class="content">
-      @csrf
-        <!-- 投稿の編集ボタン -->
-        <a class="js-modal-open" href="/update" post="{{ $timeline->post }}" post_id="{{ $timeline->id }}" ><img src="images/edit.png"></a>
-        
-      </div>
-      <!--削除ボタン-->
-      <form action="/trash" method="post">
-      @csrf
-        <!--入力フォームからサーバーへ送信する初期値を指定(value)して、見えないように隠す(hidden)-->
-        <input type="hidden" value="{{ $timeline->id }}" name="id"> <!--valueでidを取り出して指定-->
-        <input type="image" src="{{ asset('images/trash-h.png') }}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">
-      </form>
+      @if(!Auth::user()->isFollowing($timeline->user->id))
+        <div class="content">
+        @csrf
+          <!-- 投稿の編集ボタン -->
+          <a class="js-modal-open" href="/update" post="{{ $timeline->post }}" post_id="{{ $timeline->id }}" ><img src="images/edit.png"></a>
+          
+        </div>
+        <!--削除ボタン-->
+        <form action="/trash" method="post">
+        @csrf
+          <!--入力フォームからサーバーへ送信する初期値を指定(value)して、見えないように隠す(hidden)-->
+          <input type="hidden" value="{{ $timeline->id }}" name="id"> <!--valueでidを取り出して指定-->
+          <input type="image" src="{{ asset('images/trash-h.png') }}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">
+        </form>
+      @endif
     @endif
   @endforeach
 </div>
