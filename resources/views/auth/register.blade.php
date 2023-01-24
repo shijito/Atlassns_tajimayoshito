@@ -1,7 +1,7 @@
 @extends('layouts.logout')
 
 @section('content')
-<div  class="register"></div>
+<div  class="register">
 	{!! Form::open() !!}
 
 	<h2 class="addatlassns">新規ユーザー登録</h2>
@@ -12,7 +12,7 @@
 	@endif 
 	
 	<div class="login-username">
-		{{ Form::label('ユーザー名') }}
+		{{ Form::label('username') }}
 	</div>
 	
 	<div class="login-nameform">
@@ -25,7 +25,7 @@
 	@endif 
 	
 	<div class="login-addmaillabel">
-		{{ Form::label('メールアドレス') }}
+		{{ Form::label('maill adress') }}
 	</div>
 	
 	<div class="login-addmaillform">
@@ -38,7 +38,7 @@
 	@endif 
 
 	<div class="login-passlabel">
-		{{ Form::label('パスワード') }}
+		{{ Form::label('password') }}
 	</div>
 	
 	<div class="login-passform">
@@ -46,7 +46,7 @@
 	</div>
 	
 	<div class="login-passlabel">
-		{{ Form::label('パスワード確認') }}
+		{{ Form::label('password comfirm') }}
 	</div>
 	
 	<div class="login-passform">
@@ -54,7 +54,7 @@
 	</div>
 	
 	<div class="register-btn">
-		{{ Form::submit('register',['class' => 'registerbtn']) }}
+		{{ Form::submit('REGISTER',['class' => 'registerbtn']) }}
 	</div>
 	
 	<div class="atlassns-add">
