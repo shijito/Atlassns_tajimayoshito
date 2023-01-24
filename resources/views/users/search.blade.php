@@ -23,23 +23,27 @@
 <!--自分以外-->
   @foreach ($searchlist as $searchlist)
     @if(Auth::id() != $searchlist->id) <!--usercontroller-->
-        <tr class="searchresult">
+      <table class="search-content">  
+        <tr class="searchresult-content">
           <td class="searchresult-image"><img src="{{asset('storage/images/' . $searchlist->images )}}" /></td>
           <td class="searchresult-username">{{ $searchlist->username }}</td>  <!--総リストのログインユーザーIDではないものを表示する-->
-        </tr>  
-      <div class="d-flex justify-content-end flex-grow-1">
-        @if(Auth::user()->isFollowing($searchlist->id))
-          <form action="/usersearch/{{ $searchlist->id }}/unfollow" method="post">
-            @csrf
-            <button type="submit" class="btn btn-danger">フォロー解除</button>
-          </form>
-        @else
-          <form action="/usersearch/{{ $searchlist->id }}/follow" method="post"> <!--urlにリストのidを取り出す-->
-            @csrf
-            <button type="submit" class="btn btn-primary">フォローする</button>
-          </form>
-        @endif
-      </div>
+          <td>
+              <div class="d-flex justify-content-end flex-grow-1">
+                @if(Auth::user()->isFollowing($searchlist->id))
+                  <form action="/usersearch/{{ $searchlist->id }}/unfollow" method="post">
+                    @csrf
+                    <button type="submit" class="btn btn-danger">フォロー解除</button>
+                  </form>
+                @else
+                  <form action="/usersearch/{{ $searchlist->id }}/follow" method="post"> <!--urlにリストのidを取り出す-->
+                    @csrf
+                    <button type="submit" class="btn btn-primary">フォローする</button>
+                  </form>
+                @endif
+              </div>
+          </td>
+        </tr>
+      </table>  
     @endif    
   @endforeach
 </div> 

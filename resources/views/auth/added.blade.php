@@ -13,7 +13,7 @@
        早速ログインをしてみましょう。</p>
   </div>
   
-  <div class="logincomplete-btn">
+  <div class="add-btn">
     <p class="btn"><a href="/login">ログイン画面へ</a></p>
   </div>
 </div>
