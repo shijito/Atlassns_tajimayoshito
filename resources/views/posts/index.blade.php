@@ -67,9 +67,11 @@
               @csrf
                     <textarea name="uppost" class="modal_post"></textarea>
                     <input type="hidden" name="id" class="modal_id" value="">
-                    <input type="image" src="{{ asset('images/edit.png') }}">
+                    <div class="modal_imgright">
+                      <input type="image" class="modal_image" src="{{ asset('images/edit.png') }}">
+                    </div>
               </form>
-              <a class="js-modal-close" href="/update">閉じる</a>
+              <a class="js-modal-close" href="/update"></a>
             </div>
     </div> 
 

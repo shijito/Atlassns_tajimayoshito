@@ -53,9 +53,12 @@ class PostsController extends Controller
               return redirect()->back()
                 ->withErrors($validator);
             }
+
+        $post = $request->input('form-tweet');
+
         \DB::table('posts')->insert([       //データベースのpostsに追加
-            'post' => $data,                //カラム　ー＞　変数
-            'user_id' => $id
+            'user_id' => $id,               //カラム　ー＞　変数
+            'post' => $post 
         ]);
         return redirect('/top'); //return redirectは、return redirect('url');
     }

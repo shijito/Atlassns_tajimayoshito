@@ -27,44 +27,112 @@ header{
 
 .left img {
   width: 138px;  /**画像サイズを変更**/
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
 
 .top-right {
   display: flex;
+  padding-top: 5px;
 }
 
 /* nameview */
 .head-block > p {
   margin: 30px 0;
-  color: #fff;
+  padding-right: 30px;
+  color: white;
 }
 
 /*menuber*/
-.menuber-01 {
-  margin: 22px 0;
+.menuber {
+  padding-right: 10px;
 }
 
-.arrow{
-  width: 20px; /* ボックスの横幅を指定する */
-  height: 20px; /* ボックスの高さを指定する */
-  margin: 0 20px;
-  border-top: 2px solid #666666; /* 境界線の上部を実線に指定する*/
-  border-right: 2px solid #666666;/* 境界線の上部を実線に指定する*/
-  display: inline-block; /* インライン要素化 */
-}
-
-.bottom {
-  transform: rotate(135deg); /* ボックスを回転させる（下向き矢印） */
-}
 
 /* アコーディオン */
-.submenu01 {
-  position: absolute;
-  background-color: antiquewhite;
-  margin-top: 45px;
-  width: 140px;
-  /* display: none; */
+.menu {
+  width: 20%;
+  padding: 10px 10px 20px;
 }
+.menu input { 
+  display: none; /*チェックボックスを隠す*/
+ } 
+/*バー部分*/
+.menu label {
+cursor :pointer;
+display: block;
+text-decoration: none;
+color: #fff;
+line-height: 1;
+position: relative;
+margin: 0 0 10px;
+padding-top: 54px;
+}
+
+#links01 {
+  position: absolute;
+  background-color: #fff;
+  margin-top: 15px;
+  width: 375px;
+  height: 380px;
+  /* left: 842px; */
+  right: 0;
+  border: solid blue;
+  display: none;
+}
+
+#menu_bar01:checked ~ #links01 {
+  display: block;
+}
+
+#menu_bar01:checked ~ #links01 > ul > li > a {
+  color: #727272;
+  font-size: 30px;
+  line-height: 126px;
+  text-align: center;
+  display: block;
+}
+
+#menu_bar01:checked ~ #links01 > ul > li > a:hover {
+  background-color: #186AC9;
+  color: #fff;
+}
+
+/*閉じた状態の矢印描画*/
+.menu label:after{
+  content:"";
+  display:block;
+  width:8px;
+  height:8px;
+  border-top: #fff 2px solid;
+  border-right: #fff 2px solid;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  position:absolute;
+  right: 2%;
+  top: 0;
+  bottom: 15%;
+  margin: auto;
+}
+/*開いた状態の矢印描画*/
+.menu input[type=checkbox]:checked + label:after{
+  content:"";
+  display:block;
+  width:8px;
+  height:8px;
+  border-top: #fff 2px solid;
+  border-right: #fff 2px solid;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position:absolute;
+  right: 2%;
+  top: 7%;
+  bottom: 0;
+  margin: auto;
+}
+/*アコーディオンメニュー終わり*/
 
 .usericon {
   padding-right: 50px;
@@ -474,107 +542,6 @@ table.follow-content > tbody > tr > td.follow-tweettime {
 
 
 
-
-
-
-
-
-
-/*↓アコーディオンメニュー　開いた状態の矢印描画まで*/
-/*アコーディオン全体*/
-
-
-/* .bottom:hover {
-  transform: rotateX(400deg);
-} */
-
-/* .menuber {
-  width: auto;
-  padding: 10px 10px 20px;
-} */
-
-/* .menu {
-    width: 20%;
-    padding: 10px 10px 20px;
-  } */
- /* .menu input { */
-    /* display: none; チェックボックスを隠す */
-  /* }  */
-/*バー部分*/
-/* .menu label {
-    cursor :pointer;
-    display: block;
-    text-decoration: none;
-    color: #fff;
-    line-height: 1;
-    position: relative;
-    margin: 0 0 10px;
-    padding: 10px;
-    
-  } */
-/*開いたときに表示される部分*/
-/* .menu ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    margin-bottom: 1px;
-  } */
-/* .menu li {
-    height: 0;
-    overflow-y: hidden;
-    transition: padding-bottom 0.5s, padding-top 0.5s; /*閉じるときのアニメーション*/
-    /* -webkit-transition: padding-bottom 0.5s, padding-top 0.5s;
-    -moz-transition: padding-bottom 0.5s, padding-top 0.5s;
-    -ms-transition: padding-bottom 0.5s, padding-top 0.5s;
-    -o-transition: padding-bottom 0.5s, padding-top 0.5s;
-  } */
-/* #menu_bar01:checked ~ #links01 li{ 
-    height: auto; 
-    opacity: 1;
-    background: #f1f1f1;
-    padding: 10px;
-  } */
-/*開いたときの下の余白*/
-    /* #menu_bar01:checked ~ #links01 li:last-child{
-    margin-bottom: 20px;
-  } */
-
-/*閉じた状態の矢印描画*/
-/* .menu label:after{
-    content:"";
-    display:block;
-    width:8px;
-    height:8px;
-    border-top: #fff 2px solid;
-    border-right: #fff 2px solid;
-    -webkit-transform: rotate(135deg);
-    -ms-transform: rotate(135deg);
-    transform: rotate(135deg);
-    position:absolute;
-    right: 2%;
-    top: 0;
-    bottom: 15%;
-    margin: auto;
-  } */
-/*開いた状態の矢印描画*/
-/* .menu input[type=checkbox]:checked + label:after{
-    content:"";
-    display:block;
-    width:8px;
-    height:8px;
-    border-top: #fff 2px solid;
-    border-right: #fff 2px solid;
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    position:absolute;
-    right: 2%;
-    top: 7%;
-    bottom: 0;
-    margin: auto;
-  } */
-/*アコーディオンメニュー終わり*/
-
 /* main content */
 #row{
     display: flex;
@@ -613,7 +580,25 @@ table.follow-content > tbody > tr > td.follow-tweettime {
   position: absolute;
   top: 50%;
   transform: translate(-50%,-50%);
-  width: 60%;
+  width: 50%;
+  height: 35%;
+  border-radius: 15px;
+}
+
+.modal_post {
+  width: 950px;
+  height: 260px;
+  font-size: 25px;
+}
+
+.modal_imgright {
+  text-align: right;
+}
+
+.modal_image {
+  width: 50px;
+  padding-top: 20px;
+  
 }
 
 /*エラー文*/

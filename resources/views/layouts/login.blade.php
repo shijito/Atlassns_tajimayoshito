@@ -31,16 +31,29 @@
                         <p>{{ Auth::user()->username }}　　さん</p>
                     </div>
                     <div class="head-block menuber">
-                        <div class="menuber-01">
-                            <p class="arrow bottom"></p>
-                            <div class="submenu01">
+                        <div class="menu">
+                            <input type="checkbox" id="menu_bar01"/>
+                            <label for="menu_bar01"></label>
+                            <div id="links01">
                                 <ul>
-                                    <li><a href="/top">ホーム</a></li>
-                                    <li><a href="/profile">プロフィール</a></li>
-                                    <li><a href="/logout">ログアウト</a></li>
+                                    <li class="header-menu"><a href="/top">ホーム</a></li>
+                                    <li class="header-menu"><a href="/profile">プロフィール編集</a></li>
+                                    <li class="header-menu"><a href="/logout">ログアウト</a></li>
                                 </ul>
                             </div>
                         </div>
+                    
+                
+                        <!-- <div class="menuber-01">
+                            <a href="#" class="arrow bottom"></a>
+                            <div class="submenu01">
+                                <ul>
+                                    <li class="header-menu"><a href="/top">ホーム</a></li>
+                                    <li class="header-menu"><a href="/profile">プロフィール編集</a></li>
+                                    <li class="header-menu"><a href="/logout">ログアウト</a></li>
+                                </ul>
+                            </div>
+                        </div> -->
                         <!-- <div class="menu">
                             <input type="checkbox" id="menu_bar01"/>
                             <label for="menu_bar01"></label>
