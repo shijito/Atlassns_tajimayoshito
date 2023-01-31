@@ -25,7 +25,7 @@ header{
   
 }
 
-.head-wrapper>div:first-of-type {
+.head-wrapper > div:first-of-type {
   margin-right: auto;
 }
 
@@ -103,6 +103,7 @@ a {
 .form-control {
   /* min-height: 150px; */
   width: 500px;
+  /* height: 100px; */
   vertical-align: top;
   padding: 18px 0 0 10px;
   border: none;
@@ -119,17 +120,17 @@ a {
 .tweet-content {
   table-layout: auto;
   width: 100%;
-  margin: 50px 0 ;
+  /* margin: 50px 0 ; */
   /* padding-bottom: 20px; */
-  border-bottom: 1px solid black;  
+  /* border-bottom: 1px solid black;   */
 }
 
-/* .tweet-timeline { */
-  /* padding: 30px 0 10px 0; */
+.tweet-timeline { 
+  padding: 30px 0;
   /* height: 100px; */
   /* padding-bottom: 30px; */
-  /* border-bottom: 1px solid ; */
-/* } */
+  border: 1px solid ;
+}
 
 .tweet-icon {
   width: 220px;
@@ -138,18 +139,18 @@ a {
   /* padding-top: 50px; */
 }
 
-table.tweet-content > tbody > tr > td.follow-username {
+.follow-username {
   /* float: left; */
-  /* vertical-align: top; */
+  vertical-align: middle;
   padding-left: 20px;
 }
 
-table.tweet-content > tbody > tr > td.follow-tweet {
+.follow-tweet {
   vertical-align: bottom;
   padding-left: 20px;
 }
 
-table.tweet-content > tbody > tr > td.follow-tweettime {
+.follow-tweettime {
   /* vertical-align: top; */
   /* padding-left: 950px; */
   text-align: right ;
@@ -165,11 +166,14 @@ table.tweet-content > tbody > tr > td.follow-tweettime {
   width: 70px;
 }
 
-.content-postedit {
-  /* padding-left: 500px; */
+.edit-trash {
+  display: flex;
+  justify-content: end;
 }
 
-
+.content-postedit {
+  padding-top: 10px;
+}
 
 /*profile*/
 .UserProfile {

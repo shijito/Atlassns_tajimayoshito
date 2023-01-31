@@ -34,26 +34,26 @@
         <table class="tweet-content" >
           <tr>
             <td rowspan="2" class="tweet-icon"><img src="{{asset('storage/images/' . $timeline->user->images )}}" /></td>
-            <td class="follow-username">{{ $timeline->user->username }}<td><!--ユーザー名を表示させる必要がある-->
+            <td class="follow-username">{{ $timeline->user->username }}</td><!--ユーザー名を表示させる必要がある-->
             <td class="follow-tweettime">{{ $timeline->created_at }}</td>
           </tr>
           <tr>
             <td colspan="2" class="follow-tweet">{{ $timeline->post }}</td>  
           </tr>
-          <tr class="edit-trash">
+        </table>
+        <div class="edit-trash">
             @if(!Auth::user()->isFollowing($timeline->user->id))
-              <td class="content-postedit" colspan="7"><a class="js-modal-open" href="/update" post="{{ $timeline->post }}" post_id="{{ $timeline->id }}" ><img src="images/edit.png"></a></td>
-              <td class="content-posttrash">
+              <div class="content-postedit" ><a class="js-modal-open" href="/update" post="{{ $timeline->post }}" post_id="{{ $timeline->id }}" ><img src="images/edit.png"></a></div>
+              <div class="content-posttrash">
                 <form action="/trash" method="post" class="tweet-trash">
                   @csrf
                   <!--入力フォームからサーバーへ送信する初期値を指定(value)して、見えないように隠す(hidden)-->
                   <input type="hidden" value="{{ $timeline->id }}" name="id"> <!--valueでidを取り出して指定-->
                   <input type="image" src="{{ asset('images/trash-h.png') }}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">
                 </form>
-              </td>
+              </div>
             @endif  
-          </tr>
-        </table>
+          </div>
       </div>
     @endif
   @endforeach  
