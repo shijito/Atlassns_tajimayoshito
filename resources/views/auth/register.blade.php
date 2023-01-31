@@ -31,7 +31,7 @@
 	</div>
 
 	@if($errors->has('mail'))  <!--has()でエラー文の1つを指定して表示できる-->
-		{{ $errors->first('mail') }}
+		<span class="errors-red">{{ $errors->first('mail') }}</span>
 	@endif 
 	
 	<!--password-->
@@ -44,7 +44,7 @@
 	</div>
 	
 	@if($errors->has('password'))  <!--has()でエラー文の1つを指定して表示できる-->
-		{{ $errors->first('password') }}
+		<span class="errors-red">{{ $errors->first('password') }}</span>
 	@endif 
 
 	<div class="login-passlabel">

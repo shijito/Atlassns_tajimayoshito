@@ -8,7 +8,7 @@
             @foreach ($follower_user as $follower_user)
                 <tr>
                     <!--ログインユーザーのフォロワーの一覧を表示する-->
-                    <td ><img src="{{asset('storage/images/' . $follower_user->images )}}" /><td>
+                    <td><a href="/follows/{{ $follower_user->id }}"><img src="{{asset('storage/images/' . $follower_user->images )}}" /></a><td>
                 </tr>
             @endforeach
         </div>

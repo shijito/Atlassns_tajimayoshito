@@ -615,3 +615,8 @@ table.follow-content > tbody > tr > td.follow-tweettime {
   transform: translate(-50%,-50%);
   width: 60%;
 }
+
+/*エラー文*/
+.errors-red {
+  color: red;
+}

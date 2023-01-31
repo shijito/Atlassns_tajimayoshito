@@ -13,7 +13,7 @@
         <tr class="username-form">
           <!--username-->
           @if($errors->has('username'))  <!--has()でエラー文の1つを指定して表示できる-->
-            {{ $errors->first('username') }}
+            <span class="errors-red">{{ $errors->first('username') }}</span>
           @endif 
           <th class="user-name">user name</th>
           <td><input class="profile-input" type="text" class="text" name="username" value="{{$user->username}}"></td><!--Usercontroller　profileでuser情報を取得してその中からusernameのみを取得。userテーブルの中のカラム情報を取り出している-->
@@ -21,7 +21,7 @@
         <tr class="mail-form">
           <!--mail-->
           @if($errors->has('mail'))  <!--has()でエラー文の1つを指定して表示できる-->
-            {{ $errors->first('mail') }}
+            <span class="errors-red">{{ $errors->first('mail') }}</span>
           @endif 
           <th class="mail-adress">mail adress</th>
           <td><input class="profile-input" type="text" name="mail" value="{{$user->mail}}"></td><!--Usercontroller　profileでuser情報を取得してその中からmailのみを取得-->
@@ -29,7 +29,7 @@
         <tr class="password-form">
           <!--password-->
           @if($errors->has('newpassword'))  <!--has()でエラー文の1つを指定して表示できる-->
-            {{ $errors->first('newpassword') }}
+            <span class="errors-red">{{ $errors->first('newpassword') }}</span>
           @endif 
           <th class="password">password</th>
           <td><input class="profile-input" type="password" name="newpassword" ></td>
@@ -42,7 +42,7 @@
         <tr class="bio-form">
           <!--bio-->
           @if($errors->has('bio'))  <!--has()でエラー文の1つを指定して表示できる-->
-            {{ $errors->first('bio') }}
+            <span class="errors-red">{{ $errors->first('bio') }}</span>
           @endif 
           <th class="bio">bio</th>
           <td><input class="profile-input" type="text" name="bio" value="{{$user->bio}}"></td><!--Usercontroller　profileでuser情報を取得してその中からbioのみを取得-->
@@ -50,7 +50,7 @@
         <tr class="image-form">
           <!--image-->
           @if($errors->has('iconimage'))  <!--has()でエラー文の1つを指定して表示できる-->
-            {{ $errors->first('iconimage') }}
+            <span class="errors-red">{{ $errors->first('iconimage') }}<span>
           @endif 
           <th class="icon-image">icon image</th>
           <td class="iconimage"><input type="file" name="iconimage"></td>
