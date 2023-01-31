@@ -7,9 +7,6 @@
 	<h2 class="addatlassns">新規ユーザー登録</h2>
 
 	<!--usernameー-->
-	@if($errors->has('username'))  <!--has()でエラー文の1つを指定して表示できる-->
-		{{ $errors->first('username') }}
-	@endif 
 	
 	<div class="login-username">
 		{{ Form::label('username') }}
@@ -18,11 +15,12 @@
 	<div class="login-nameform">
 		{{ Form::text('username',null,['class' => 'input']) }}
 	</div>
+
+	@if($errors->has('username'))  <!--has()でエラー文の1つを指定して表示できる-->
+		<span class="errors-red">{{ $errors->first('username') }}</span>
+	@endif 
 	
 	<!--mail-->
-	@if($errors->has('mail'))  <!--has()でエラー文の1つを指定して表示できる-->
-		{{ $errors->first('mail') }}
-	@endif 
 	
 	<div class="login-addmaillabel">
 		{{ Form::label('maill adress') }}
@@ -31,12 +29,12 @@
 	<div class="login-addmaillform">
 		{{ Form::text('mail',null,['class' => 'input']) }}
 	</div>
+
+	@if($errors->has('mail'))  <!--has()でエラー文の1つを指定して表示できる-->
+		{{ $errors->first('mail') }}
+	@endif 
 	
 	<!--password-->
-	@if($errors->has('password'))  <!--has()でエラー文の1つを指定して表示できる-->
-		{{ $errors->first('password') }}
-	@endif 
-
 	<div class="login-passlabel">
 		{{ Form::label('password') }}
 	</div>
@@ -45,6 +43,10 @@
 		{{ Form::text('password',null,['class' => 'input']) }}
 	</div>
 	
+	@if($errors->has('password'))  <!--has()でエラー文の1つを指定して表示できる-->
+		{{ $errors->first('password') }}
+	@endif 
+
 	<div class="login-passlabel">
 		{{ Form::label('password comfirm') }}
 	</div>

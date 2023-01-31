@@ -22,7 +22,7 @@ class PostsController extends Controller
     {
         
         return Validator::make($data, [
-            'tweet' => 'required|string|max:150',
+            'form-tweet' => 'required|string|max:150',
         ]);
     }
 

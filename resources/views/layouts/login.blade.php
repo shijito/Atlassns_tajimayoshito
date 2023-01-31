@@ -26,32 +26,34 @@
                 <div class="head-block left">
                     <a href="/top"><img src="{{asset('images/atlas.png')}}"></a>
                 </div>
-                <div class="head-block nameview">
-                    <p>{{ Auth::user()->username }}　　さん</p>
-                </div>
-                <div class="head-block menuber">
-                    <div class="menuber-01">
-                        <p class="arrow bottom"></p>
-                        <div class="submenu01">
-                            <ul>
-                                <!-- <li><a href="/top">ホーム</a></li>
-                                <li><a href="/profile">プロフィール</a></li>
-                                <li><a href="/logout">ログアウト</a></li> -->
-                            </ul>
-                        </div>
+                <div class='top-right'>
+                    <div class="head-block nameview">
+                        <p>{{ Auth::user()->username }}　　さん</p>
                     </div>
-                    <!-- <div class="menu">
-                        <input type="checkbox" id="menu_bar01"/>
-                        <label for="menu_bar01"></label>
-                        <ul id="links01">
-                            <li><a href="/top">ホーム</a></li>
-                            <li><a href="/profile">プロフィール</a></li>
-                            <li><a href="/logout">ログアウト</a></li>
-                        </ul>
-                    </div> -->
-                </div>
-                <div class="head-block usericon">
-                    <img src="{{asset('storage/images/' . Auth::user()->images )}}" />
+                    <div class="head-block menuber">
+                        <div class="menuber-01">
+                            <p class="arrow bottom"></p>
+                            <div class="submenu01">
+                                <ul>
+                                    <li><a href="/top">ホーム</a></li>
+                                    <li><a href="/profile">プロフィール</a></li>
+                                    <li><a href="/logout">ログアウト</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- <div class="menu">
+                            <input type="checkbox" id="menu_bar01"/>
+                            <label for="menu_bar01"></label>
+                            <ul id="links01">
+                                <li><a href="/top">ホーム</a></li>
+                                <li><a href="/profile">プロフィール</a></li>
+                                <li><a href="/logout">ログアウト</a></li>
+                            </ul>
+                        </div> -->
+                    </div>
+                    <div class="head-block usericon">
+                        <img src="{{asset('storage/images/' . Auth::user()->images )}}" />
+                    </div>
                 </div>
             </div>
         </div>

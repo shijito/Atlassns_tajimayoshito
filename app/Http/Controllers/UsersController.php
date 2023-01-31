@@ -30,10 +30,11 @@ class UsersController extends Controller
     public function profileupdate(Request $request){
         
         $user = Auth::id();
-        $image = $request->file('iconimage')->store('public/images');
+        // $image = $request->file('iconimage')->store('public/images');
         
-        if($request->all){    
-            // $image = $request->file('iconimage')->store('public/images');
+        if(!empty($request->file('iconimage'))){    
+            
+            $image = $request->file('iconimage')->store('public/images');
             $validator = Validator::make($request->all(), [
                 'username' => 'required|string|between:2,12',
                 'mail' => 'required|string|email|between:5,40|unique:users',
@@ -45,20 +46,31 @@ class UsersController extends Controller
                 return redirect()->back()
                 ->withErrors($validator);
             }
-            
-        // } else{
 
-        //     $validator = Validator::make($request->all(), [
-        //         'username' => 'required|string|between:2,12',
-        //         'mail' => 'required|string|email|between:5,40|unique:users',
-        //         'newpassword' => 'required|string|between:8,20|alpha_num|confirmed',
-        //         'bio' => 'max:150|nullable',
+            //画像がある状態の登録
+            User::where('id', $user)->update([      //idとログインユーザーのidが一致するもの
+                'username' => $request->input('username'),
+                'mail' => $request->input('mail'),
+                'password' => bcrypt($request->input('newpassword')),
+                'bio' => $request->input('bio'),
+                'images' => basename($image),
+                ]);
                 
-        //     ]);
-        //     if($validator->fails()){
-        //         return redirect()->back()
-        //         ->withErrors($validator);
-        //     }
+            return back();
+            
+        } else{
+
+            $validator = Validator::make($request->all(), [
+                'username' => 'required|string|between:2,12',
+                'mail' => 'required|string|email|between:5,40|unique:users',
+                'newpassword' => 'required|string|between:8,20|alpha_num|confirmed',
+                'bio' => 'max:150|nullable',
+                
+            ]);
+            if($validator->fails()){
+                return redirect()->back()
+                ->withErrors($validator);
+            }
 
             User::where('id', $user)->update([      //idとログインユーザーのidが一致するもの
                 'username' => $request->input('username'),
@@ -70,16 +82,6 @@ class UsersController extends Controller
             return back();
 
         }
-
-        User::where('id', $user)->update([      //idとログインユーザーのidが一致するもの
-        'username' => $request->input('username'),
-        'mail' => $request->input('mail'),
-        'password' => bcrypt($request->input('newpassword')),
-        'bio' => $request->input('bio'),
-        'images' => basename($image),
-        ]);
-        
-        return back();
 
     }
 

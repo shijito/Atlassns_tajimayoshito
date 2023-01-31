@@ -14,35 +14,60 @@ body{
 header{
   background:#186AC9;
   height: 115px;
-  display: flex;
-  align-items: center;
+  /* align-items: center; */
 }
-/*head*/
 
 .head-wrapper {
   display: flex;
+  /* vertical-align: middle; */
   align-items: center;
-  
-}
-
-.head-wrapper > div:first-of-type {
-  margin-right: auto;
-}
-
-.menuber {
-  
+  justify-content: space-between;
+  padding-top: 20px;
 }
 
 .left img {
-  width: 138px;  /*画像サイズを変更*/
+  width: 138px;  /**画像サイズを変更**/
 }
 
+.top-right {
+  display: flex;
+}
+
+/* nameview */
+.head-block > p {
+  margin: 30px 0;
+  color: #fff;
+}
+
+/*menuber*/
+.menuber-01 {
+  margin: 22px 0;
+}
+
+.arrow{
+  width: 20px; /* ボックスの横幅を指定する */
+  height: 20px; /* ボックスの高さを指定する */
+  margin: 0 20px;
+  border-top: 2px solid #666666; /* 境界線の上部を実線に指定する*/
+  border-right: 2px solid #666666;/* 境界線の上部を実線に指定する*/
+  display: inline-block; /* インライン要素化 */
+}
+
+.bottom {
+  transform: rotate(135deg); /* ボックスを回転させる（下向き矢印） */
+}
+
+/* アコーディオン */
 .submenu01 {
   position: absolute;
   background-color: antiquewhite;
   margin-top: 45px;
   width: 140px;
   /* display: none; */
+}
+
+.usericon {
+  padding-right: 50px;
 }
 
 
@@ -458,18 +483,10 @@ table.follow-content > tbody > tr > td.follow-tweettime {
 /*↓アコーディオンメニュー　開いた状態の矢印描画まで*/
 /*アコーディオン全体*/
 
-.arrow{
-  width: 20px; /* ボックスの横幅を指定する */
-  height: 20px; /* ボックスの高さを指定する */
-  margin: 0 20px;
-  border-top: 2px solid #666666; /* 境界線の上部を実線に指定する*/
-  border-right: 2px solid #666666;/* 境界線の上部を実線に指定する*/
-  display: inline-block; /* インライン要素化 */
-}
 
-.bottom {
-  transform: rotate(135deg); /* ボックスを回転させる（下向き矢印） */
-}
+/* .bottom:hover {
+  transform: rotateX(400deg);
+} */
 
 /* .menuber {
   width: auto;

@@ -108,6 +108,10 @@ header > p {
 
 /*register*/
 
+.errors-red {
+    color: red;
+}
+
 .register {
     width: 400px;
     height: 600px;
